@@ -18,7 +18,7 @@ function GapBuffer(gapSize) {
 Object.defineProperty(GapBuffer.prototype, 'length', {
   enumerable: true,
   get: function() {
-    return this.gapStart + (this.buffer.length - this.gapEnd);
+    return this.buffer.length - (this.gapEnd - this.gapStart);
   },
 });
 
