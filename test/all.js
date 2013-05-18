@@ -82,3 +82,27 @@ test('insert random', function(assert) {
   assert.end();
   
 });
+
+test('fuzz', function(assert) {
+  
+  function random(max) {
+    return Math.floor(Math.random() * max);
+  }
+  
+  var buffer = new GapBuffer;
+  var array = [];
+  
+  for (var i = 0; i < 500; i++) {
+    var ix = random(array.length);
+    var count = random(100);
+    for (var j = 0; j < count; ++j) {
+      var num = random(10000);
+      array.splice(ix + j, 0, num);
+      buffer.insert(ix + j, num);
+    }
+  }
+  
+  assert.deepEqual(buffer.asArray(), array);
+  assert.end();
+  
+});
