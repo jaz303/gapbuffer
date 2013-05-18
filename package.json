@@ -1,0 +1,22 @@
+{
+    "name": "gapbuffer",
+    "version": "0.0.1",
+    "description": "Gap buffer data structure implementation",
+    "main": "index.js",
+    "scripts": {
+        "test": "set -e; for t in test/*.js; do node $t; done"
+    },
+    "devDependencies": {
+        "tape": "~0.2.2"
+    },
+    "keywords": [
+        "buffer",
+        "gap-buffer"
+    ],
+    "author": "Jason Frame <jason@onehackoranother.com> (jasonframe.co.uk)",
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/jaz303/gapbuffer.git"
+    }
+}
