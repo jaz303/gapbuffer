@@ -1,6 +1,18 @@
 var test = require('tape');
 var GapBuffer = require('../').GapBuffer;
 
+test('initial .length', function(assert) {
+  var buffer = new GapBuffer;
+  assert.ok(buffer.length === 0);
+  assert.end();
+});
+
+test('initial asArray()', function(assert) {
+  var buffer = new GapBuffer;
+  assert.deepEqual([], buffer.asArray());
+  assert.end();
+});
+
 test('insert', function(assert) {
   
   var buffer = new GapBuffer(4);
