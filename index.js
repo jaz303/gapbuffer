@@ -78,7 +78,7 @@ function moveGap(self, ix) {
     var gapSize = (self.gapEnd - self.gapStart);
     var delta = self.gapStart - ix;
         
-    for (var i = 0; i < delta; ++i) {
+    for (var i = delta - 1; i >= 0; --i) {
       self.buffer[self.gapEnd - delta + i] = self.buffer[ix + i];
     }
     
