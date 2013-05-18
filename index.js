@@ -3,11 +3,16 @@ module.exports.GapBuffer = GapBuffer;
 var splice = Array.prototype.splice;
 
 function GapBuffer(gapSize) {
-  this.gapSize    = gapSize || 64;
+  
+  this.gapSize = parseInt(gapSize || 64);
+  if (this.gapSize <= 0)
+    throw new RangeError("gapSize must be > 0");
+  
   this.buffer     = new Array(this.gapSize);
   this.gapStart   = 0;
   this.gapEnd     = this.gapSize;
   this.spliceArgs = new Array(this.gapSize + 2);
+
 }
 
 Object.defineProperty(GapBuffer.prototype, 'length', {
