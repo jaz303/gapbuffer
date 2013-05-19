@@ -55,6 +55,13 @@ GapBuffer.prototype.insert = function(ix, value) {
   this.buffer[this.gapStart++] = value;
 }
 
+GapBuffer.prototype.insertAll = function(ix, values) {
+  // TODO: this should be optimised
+  for (var i = 0; i < values.length; ++i) {
+    this.insert(ix + i, values[i]);
+  }
+}
+
 GapBuffer.prototype.deleteBefore = function(ix, len) {
   if (ix === 0 || ix > this.length) return;
   moveGap(this, ix);
