@@ -58,6 +58,20 @@ test('insert before', function(assert) {
   
 });
 
+test('delete', function(assert) {
+  
+  var buffer = new GapBuffer(3);
+  buffer.insertAll(0, [1,2,3,4,5,6,7,8,9,10]);
+  
+  buffer.deleteBefore(10, 3);
+  buffer.deleteBefore(3, 3);
+  
+  assert.ok(buffer.length === 4);
+  assert.deepEqual(buffer.asArray(), [4,5,6,7]);
+  assert.end();
+  
+});
+
 test('insert random', function(assert) {
   
   var buffer = new GapBuffer(3);
