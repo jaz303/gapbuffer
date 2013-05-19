@@ -1,6 +1,6 @@
 {
   "name": "gapbuffer",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Gap buffer data structure implementation",
   "main": "index.js",
   "scripts": {
